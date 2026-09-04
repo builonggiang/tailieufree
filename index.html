@@ -14,8 +14,7 @@
     /* Modal / Popup */
     .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); align-items: center; justify-content: center; }
     .modal-content { background: white; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; }
-    .btn-shopee { display: block; background: #ee4d2d; color: white; padding: 12px; text-decoration: none; border-radius: 8px; margin: 16px 0; font-weight: bold; }
-    .btn-skip { color: #64748b; background: none; border: none; cursor: pointer; text-decoration: underline; }
+    .btn-shopee { display: block; background: #ee4d2d; color: white; padding: 12px; text-decoration: none; border-radius: 8px; margin: 16px 0 0 0; font-weight: bold; cursor: pointer; border: none; font-size: 15px; width: 100%; box-sizing: border-box; }
   </style>
 </head>
 <body>
@@ -27,14 +26,15 @@
   <div id="results"></div>
 </div>
 
-<!-- Popup khi nhấn Tải -->
+<!-- Popup bắt buộc bấm Shopee để tải -->
 <div id="downloadModal" class="modal">
   <div class="modal-content">
-    <h3>📦 Đang tải tài liệu</h3>
-    <p id="modalDocTitle"></p>
-    <p style="font-size: 13px; color: #64748b;">Ủng hộ mình bằng cách lướt xem 1 sản phẩm Shopee nhé 👇</p>
-    <a id="shopeeBtn" class="btn-shopee" href="#" target="_blank" onclick="openDriveLink()">🛒 Xem trên Shopee</a>
-    <button class="btn-skip" onclick="openDriveLink()">Bỏ qua và lấy link tải</button>
+    <h3>📦 Đang chuẩn bị tải file</h3>
+    <p id="modalDocTitle" style="font-weight: 600; color: #1e293b;"></p>
+    <p style="font-size: 13px; color: #64748b; line-height: 1.5;">
+      Tài liệu này hoàn toàn miễn phí. Bấm vào nút bên dưới để ủng hộ mình và tự động mở file tải về nhé! 🙏
+    </p>
+    <button id="shopeeBtn" class="btn-shopee" onclick="handleDownload()">🛒 Mở Shopee & Tải Ngay</button>
   </div>
 </div>
 
@@ -42,12 +42,10 @@
   let docData = [];
   let currentDoc = null;
 
-  // 1. Tải danh sách tài liệu từ JSON
   fetch('data.json')
     .then(res => res.json())
     .then(data => {
       docData = data;
-      // Tự động tìm kiếm nếu có param ?q= trên URL
       const urlParams = new URLSearchParams(window.location.search);
       const query = urlParams.get('q');
       if (query) {
@@ -88,15 +86,21 @@
   function showDownloadModal(id) {
     currentDoc = docData.find(d => d.id === id);
     document.getElementById('modalDocTitle').innerText = currentDoc.title;
-    document.getElementById('shopeeBtn').href = currentDoc.shopee_link;
     document.getElementById('downloadModal').style.display = 'flex';
   }
 
-  function openDriveLink() {
+  // Khi bấm nút Shopee: Mở tab Shopee lưu cookie, đồng thời mở tab Drive tải file
+  function handleDownload() {
+    if (!currentDoc) return;
+    
+    // Mở link tiếp thị Shopee sang tab mới
+    window.open(currentDoc.shopee_link, '_blank');
+    
+    // Sau 0.8 giây, mở tiếp link Google Drive và ẩn popup
     setTimeout(() => {
       window.open(currentDoc.link, '_blank');
       document.getElementById('downloadModal').style.display = 'none';
-    }, 500);
+    }, 800);
   }
 </script>
 
