@@ -1,14 +1,70 @@
 [
   {
-    "id": "c-plus-plus-nguyen-vu",
-    "title": "Nguyễn Vũ Coder - Lập Trình C++ Nền Tảng Đến Nâng Cao",
-    "category": "CNTT",
-    "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=600",
-    "link": "https://drive.google.com/drive/folders/1xvV3DeAlplS-u4WuQQyd65RVg-8GaWnK?usp=sharing",
+    "id": "48-ngay-lay-goc-tieng-anh",
+    "title": "48 Ngày Lấy Gốc Tiếng Anh",
+    "category": "Tiếng Anh",
+    "image": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600",
+    "link": "https://docs.google.com/spreadsheets/d/18UG8ZNKTOWHISadX153a2VeKc1Hh_49TMZdWwqLhZgE/edit?gid=0#gid=0",
+    "shopee_link": "https://s.shopee.vn/2VrSrwfvOT"
+  },
+  {
+    "id": "ngu-phap-tieng-anh-tron-doi-vmp",
+    "title": "Ngữ Pháp Tiếng Anh Trọn Đời - Cô Vũ Mai Phương",
+    "category": "Tiếng Anh",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600",
+    "link": "https://docs.google.com/spreadsheets/d/1t5H09JaPXeL3s1ZRChvs8egr0LHO91O4HK6C-0mbgs8/edit?gid=0#gid=0",
+    "shopee_link": "https://s.shopee.vn/2VrSrwfvOT"
+  },
+  {
+    "id": "21-ngay-xay-nen-tieng-anh-pham-lieu",
+    "title": "21 Ngày Xây Nền Tiếng Anh - Cô Phạm Liệu",
+    "category": "Tiếng Anh",
+    "image": "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=600",
+    "link": "https://docs.google.com/spreadsheets/d/12BBsfIJrwdTtIbfJaFX0r7DY2ErzKaEhfzdUILQ04L4/edit?usp=sharing",
+    "shopee_link": "https://s.shopee.vn/2VrSrwfvOT"
+  },
+  {
+    "id": "bi-quyet-chinh-phuc-toeic-500",
+    "title": "Bí Quyết Chinh Phục TOEIC 500+",
+    "category": "Toeic",
+    "image": "https://images.unsplash.com/photo-1544717305-2782549b5136?w=600",
+    "link": "https://drive.google.com/drive/folders/1LRbMlJtfWJSGFYmAIgZDbdlPeDrBTm2p?usp=sharing",
     "shopee_link": "https://s.shopee.vn/20vCHHOIrs"
   },
   {
-    "id": "khoa-canva-chuyen-sau",
+    "id": "luyen-thi-toeic-cho-nguoi-mat-goc-udemy",
+    "title": "Luyện Thi TOEIC Cho Người Mất Gốc (Mục Tiêu 450) Udemy",
+    "category": "Toeic",
+    "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600",
+    "link": "https://drive.google.com/drive/folders/1tKlPLkAZvYoMuXv2B1fCWy_tHukNw08B?usp=sharing",
+    "shopee_link": "https://s.shopee.vn/2VrSrwfvOT"
+  },
+  {
+    "id": "combo-3-khoa-toeic-prep-vn",
+    "title": "Combo 3 Khóa TOEIC Từ Mất Gốc Đến Chuyên Sâu 0 - 800+ Prep vn",
+    "category": "Toeic",
+    "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=600",
+    "link": "https://drive.google.com/drive/folders/1CM0nluRTLSOnEhW08UmAmCvSFHcyi2wn?usp=sharing",
+    "shopee_link": "https://s.shopee.vn/20vCHHOIrs"
+  },
+  {
+    "id": "toeic-co-vu-mai-phuong-xoa-mu-2024",
+    "title": "TOEIC Cô Vũ Mai Phương - Xóa Mù Tiếng Anh Cấp Tốc 2024",
+    "category": "Toeic",
+    "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600",
+    "link": "https://docs.google.com/spreadsheets/d/1m8EP4MQRqhgKBBVNSMwbp-al0wbrHARverPPaeXIYVs/edit?usp=sharing",
+    "shopee_link": "https://s.shopee.vn/20vCHHOIrs"
+  },
+  {
+    "id": "toeic-tong-hop-vmp",
+    "title": "Trọn Bộ TOEIC Cô Vũ Mai Phương Tổng Hợp",
+    "category": "Toeic",
+    "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600",
+    "link": "https://drive.google.com/drive/folders/1nC0h3XzJNNmfTXHfbv6bBR7kl1iTGucR",
+    "shopee_link": "https://s.shopee.vn/2VrSrwfvOT"
+  },
+  {
+    "id": "khoa-canva-mot-canva",
     "title": "Khoá Canva Cơ Bản Đến Nâng Cao - Mọt Canva",
     "category": "Thiết kế",
     "image": "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600",
@@ -16,19 +72,67 @@
     "shopee_link": "https://s.shopee.vn/2VrSrwfvOT"
   },
   {
-    "id": "combo-3-khoa-toeic-prep",
-    "title": "Combo 3 Khóa TOEIC Từ Mất Gốc Đến 800+ Prep vn",
-    "category": "Toeic",
-    "image": "https://images.unsplash.com/photo-1544717305-2782549b5136?w=600",
-    "link": "https://drive.google.com/drive/folders/1CM0nluRTLSOnEhW08UmAmCvSFHcyi2wn?usp=sharing",
+    "id": "100-video-thiet-ke-canva-nguyen-ngoc-duong",
+    "title": "Lộ Trình 100 Video Thiết Kế Mọi Thứ Với Canva Cùng Nguyễn Ngọc Dương",
+    "category": "Thiết kế",
+    "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600",
+    "link": "https://drive.google.com/drive/folders/1kVXJDmELl3h_F4kBsxnddfWoVFsH60K0",
     "shopee_link": "https://s.shopee.vn/20vCHHOIrs"
   },
   {
-    "id": "mos-tin-hoc-van-phong",
-    "title": "Trọn Bộ Khóa Học MOS 2019 Chuyên Sâu",
+    "id": "khoa-hoc-capcut-pc-qua-hd",
+    "title": "Khóa Học Làm Video Capcut PC - Quạ HD",
+    "category": "Thiết kế",
+    "image": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600",
+    "link": "https://drive.google.com/drive/folders/1ot_Daag94lAqKfNHszxaAalecMr7HPd7",
+    "shopee_link": "https://s.shopee.vn/2VrSrwfvOT"
+  },
+  {
+    "id": "tong-hop-autocad-toan-dien",
+    "title": "Trọn Bộ Khoá Học Tổng Hợp AUTOCAD Từ Cơ Bản Đến Nâng Cao",
+    "category": "Thiết kế",
+    "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600",
+    "link": "https://drive.google.com/drive/folders/1G8VnpVN2ZGCrlLJButdGk3-CbUs2THaY",
+    "shopee_link": "https://s.shopee.vn/20vCHHOIrs"
+  },
+  {
+    "id": "nguyen-vu-coder-cpp",
+    "title": "Nguyễn Vũ Coder - Lập Trình C++ Nền Tảng Đến Nâng Cao",
+    "category": "CNTT",
+    "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=600",
+    "link": "https://drive.google.com/drive/folders/1xvV3DeAlplS-u4WuQQyd65RVg-8GaWnK?usp=sharing",
+    "shopee_link": "https://s.shopee.vn/20vCHHOIrs"
+  },
+  {
+    "id": "mos-2019-chuyen-sau",
+    "title": "Khóa Học Tin Học Văn Phòng MOS 2019 Chuyên Sâu (Word, Excel, PPT)",
     "category": "Văn Phòng",
     "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?w=600",
     "link": "https://docs.google.com/spreadsheets/d/1tZfjbs4cjEhhKPg-v33DOO73VEeadr9dm373RV0ekYc/edit?usp=sharing",
     "shopee_link": "https://s.shopee.vn/2VrSrwfvOT"
+  },
+  {
+    "id": "tai-lieu-mon-dai-cuong",
+    "title": "Tài Liệu Tổng Ôn Các Môn Đại Cương Đại Học",
+    "category": "Đại học",
+    "image": "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600",
+    "link": "https://drive.google.com/drive/folders/1OoUrTW6ebjkICJtG4GkJ2LgS-pm_4-Hp?usp=sharing",
+    "shopee_link": "https://s.shopee.vn/2VrSrwfvOT"
+  },
+  {
+    "id": "test-cac-mon-dai-cuong-ngan-hang-de",
+    "title": "Ngân Hàng Đề Test & Trắc Nghiệm Các Môn Đại Cương",
+    "category": "Đại học",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600",
+    "link": "https://docs.google.com/spreadsheets/u/0/d/1hXYaeEOI6aOQprly2yYuPz-OfCtO0y9N9uOUSlfM3JA/htmlview",
+    "shopee_link": "https://s.shopee.vn/20vCHHOIrs"
+  },
+  {
+    "id": "lay-goc-hoa-ezcn",
+    "title": "Khoá Học Lấy Gốc Hoá EZCN",
+    "category": "Đại học",
+    "image": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600",
+    "link": "https://docs.google.com/document/d/1d6h-VwkvKN023V9J9MTPZX83RIsKbTKeQ70C-m2LdhI/edit?usp=sharing",
+    "shopee_link": "https://s.shopee.vn/20vCHHOIrs"
   }
 ]
