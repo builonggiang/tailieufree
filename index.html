@@ -3,102 +3,199 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kho Tài Liệu Miễn Phí</title>
+  <title>Khoá Học Trực Tuyến - E-Learning</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f8fafc; padding: 20px; text-align: center; }
-    .container { max-width: 600px; margin: auto; }
-    input { width: 100%; padding: 12px 16px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 16px; margin-bottom: 20px; box-sizing: border-box; }
-    .item { background: white; padding: 16px; margin-bottom: 12px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); text-align: left; display: flex; justify-content: space-between; align-items: center; }
-    .btn-download { background: #2563eb; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; text-decoration: none; font-size: 14px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: #f8fafc; color: #0f172a; line-height: 1.5; }
+
+    /* Header Tenschool Style */
+    header { background: #ffffff; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.02); }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+    .logo { font-size: 20px; font-weight: 800; color: #f97316; text-transform: uppercase; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+    .logo span { color: #0f172a; }
+
+    /* Hero / Search Section */
+    .hero-banner { background: #ffffff; border-bottom: 1px solid #f1f5f9; padding: 40px 20px 30px; text-align: center; }
+    .hero-banner h1 { font-size: 28px; font-weight: 800; color: #0f172a; margin-bottom: 8px; }
+    .hero-banner p { color: #64748b; font-size: 15px; max-width: 550px; margin: 0 auto 24px; }
     
-    /* Modal / Popup */
-    .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); align-items: center; justify-content: center; z-index: 999; }
-    .modal-content { background: white; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; }
-    .btn-shopee { display: block; background: #ee4d2d; color: white; padding: 12px; text-decoration: none; border-radius: 8px; margin-top: 16px; font-weight: bold; cursor: pointer; border: none; font-size: 15px; width: 100%; box-sizing: border-box; }
+    .search-wrapper { max-width: 520px; margin: 0 auto; position: relative; }
+    .search-input { width: 100%; padding: 14px 20px 14px 44px; border: 1.5px solid #e2e8f0; border-radius: 50px; font-size: 15px; outline: none; transition: 0.2s; background: #f8fafc; }
+    .search-input:focus { border-color: #f97316; background: #ffffff; box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1); }
+    .search-icon { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: #94a3b8; font-size: 16px; }
+
+    /* Filter Tabs (Pills) */
+    .filter-bar { max-width: 1200px; margin: 24px auto 0; padding: 0 20px; display: flex; gap: 10px; overflow-x: auto; scrollbar-width: none; }
+    .filter-bar::-webkit-scrollbar { display: none; }
+    .pill-btn { background: #ffffff; border: 1px solid #e2e8f0; color: #475569; padding: 8px 18px; border-radius: 30px; font-size: 14px; font-weight: 600; cursor: pointer; white-space: nowrap; transition: 0.2s; }
+    .pill-btn:hover { background: #f1f5f9; color: #0f172a; }
+    .pill-btn.active { background: #f97316; border-color: #f97316; color: #ffffff; box-shadow: 0 2px 8px rgba(249, 115, 22, 0.25); }
+
+    /* Course Grid */
+    .container { max-width: 1200px; margin: 0 auto; padding: 30px 20px 60px; }
+    .grid-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    .grid-title { font-size: 18px; font-weight: 700; color: #1e293b; }
+    .course-count { font-size: 14px; color: #64748b; font-weight: 500; }
+
+    .course-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 24px; }
+    
+    /* Card Design */
+    .course-card { background: #ffffff; border-radius: 14px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
+    .course-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px -10px rgba(0,0,0,0.08); border-color: #cbd5e1; }
+
+    .thumb-wrap { width: 100%; aspect-ratio: 16/9; background: #e2e8f0; position: relative; overflow: hidden; }
+    .course-thumb { width: 100%; height: 100%; object-fit: cover; }
+    .category-badge { position: absolute; top: 12px; left: 12px; background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(4px); color: #ffffff; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.3px; }
+
+    .course-content { padding: 18px; display: flex; flex-direction: column; flex: 1; justify-content: space-between; }
+    .course-title { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 12px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 42px; }
+    
+    .course-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; font-size: 13px; color: #64748b; }
+    .price-free { color: #16a34a; font-weight: 700; font-size: 14px; }
+
+    .btn-study { background: #f97316; color: #ffffff; border: none; padding: 10px; border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer; text-align: center; width: 100%; transition: 0.2s; }
+    .btn-study:hover { background: #ea580c; }
+
+    /* Modal Popup Shopee */
+    .modal { display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(2px); align-items: center; justify-content: center; z-index: 999; padding: 16px; }
+    .modal-box { background: #ffffff; border-radius: 16px; padding: 24px; max-width: 400px; width: 100%; text-align: center; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+    .modal-thumb { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 10px; margin-bottom: 14px; }
+    .modal-title { font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 8px; }
+    .modal-desc { font-size: 13px; color: #64748b; line-height: 1.5; margin-bottom: 18px; }
+    .btn-shopee { background: #ee4d2d; color: white; width: 100%; padding: 12px; border-radius: 8px; font-weight: 700; font-size: 15px; border: none; cursor: pointer; transition: 0.2s; }
+    .btn-shopee:hover { background: #d73211; }
   </style>
 </head>
 <body>
 
-<div class="container">
-  <h1>📚 Kho Tài Liệu Miễn Phí</h1>
-  <p>Tìm kiếm tài liệu học tập, mẫu biểu và tài nguyên miễn phí</p>
-  <input type="text" id="searchInput" placeholder="Tìm tài liệu (VD: toeic, kế toán, excel...)" oninput="filterData()">
-  <div id="results"></div>
-</div>
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <a href="#" class="logo">⚡ <span>TENSCHOOL</span></a>
+      <span style="font-size: 13px; font-weight: 600; color: #64748b;">Học trực tuyến & Tài liệu</span>
+    </div>
+  </header>
 
-<!-- Popup bắt buộc bấm Shopee để tải -->
-<div id="downloadModal" class="modal">
-  <div class="modal-content">
-    <h3>📦 Đang chuẩn bị tải file</h3>
-    <p id="modalDocTitle" style="font-weight: 600; color: #1e293b;"></p>
-    <p style="font-size: 13px; color: #64748b; line-height: 1.5;">
-      Tài liệu này hoàn toàn miễn phí. Bấm vào nút bên dưới để ủng hộ mình và mở file tải về ngay nhé! 🙏
-    </p>
-    <button id="shopeeBtn" class="btn-shopee" onclick="handleDownload()">🛒 Mở Shopee & Tải Ngay</button>
+  <!-- Banner & Search -->
+  <div class="hero-banner">
+    <h1>Khám Phá Các Khoá Học</h1>
+    <p>Tổng hợp khoá học, tài liệu thực chiến từ nền tảng đến nâng cao hoàn toàn miễn phí</p>
+    <div class="search-wrapper">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" class="search-input" placeholder="Tìm khoá học, môn học..." oninput="filterCourses()">
+    </div>
   </div>
-</div>
 
-<script>
-  let docData = [];
-  let currentDoc = null;
+  <!-- Filter Pills -->
+  <div class="filter-bar" id="categoryTabs">
+    <button class="pill-btn active" onclick="setCategory('ALL', this)">Tất cả khoá học</button>
+    <button class="pill-btn" onclick="setCategory('CNTT', this)">Lập trình - CNTT</button>
+    <button class="pill-btn" onclick="setCategory('Toeic', this)">Tiếng Anh & TOEIC</button>
+    <button class="pill-btn" onclick="setCategory('Thiết kế', this)">Thiết kế & Đồ hoạ</button>
+    <button class="pill-btn" onclick="setCategory('Văn Phòng', this)">Tin học văn phòng</button>
+    <button class="pill-btn" onclick="setCategory('Đại học', this)">Đại cương & Đại học</button>
+  </div>
 
-  fetch('data.json')
-    .then(res => res.json())
-    .then(data => {
-      docData = data;
-      const urlParams = new URLSearchParams(window.location.search);
-      const query = urlParams.get('q');
-      if (query) {
-        document.getElementById('searchInput').value = query;
-      }
-      render(filterList(query || ''));
-    });
+  <!-- Main Course Grid -->
+  <main class="container">
+    <div class="grid-header">
+      <div class="grid-title" id="displayCategory">Tất cả khoá học</div>
+      <div class="course-count" id="courseCount">0 khoá học</div>
+    </div>
+    <div class="course-grid" id="courseList"></div>
+  </main>
 
-  function filterList(keyword) {
-    return docData.filter(d => 
-      d.title.toLowerCase().includes(keyword.toLowerCase()) || 
-      d.id.toLowerCase().includes(keyword.toLowerCase())
-    );
-  }
+  <!-- Modal Chuyển Hướng -->
+  <div id="courseModal" class="modal">
+    <div class="modal-box">
+      <img id="mImg" class="modal-thumb" src="" alt="Thumbnail">
+      <h3 id="mTitle" class="modal-title"></h3>
+      <p class="modal-desc">
+        Bấm nút bên dưới để ghé thăm Shopee ủng hộ duy trì web, khoá học và tài liệu Google Drive sẽ tự động mở ra ngay!
+      </p>
+      <button class="btn-shopee" onclick="handleAccessCourse()">🚀 Mở Shopee & Vào Học</button>
+    </div>
+  </div>
 
-  function filterData() {
-    const keyword = document.getElementById('searchInput').value;
-    render(filterList(keyword));
-  }
+  <script>
+    let courses = [];
+    let currentCourse = null;
+    let activeCat = 'ALL';
 
-  function render(list) {
-    const container = document.getElementById('results');
-    if(list.length === 0) {
-      container.innerHTML = '<p>Không tìm thấy tài liệu phù hợp.</p>';
-      return;
+    fetch('data.json')
+      .then(res => res.json())
+      .then(data => {
+        courses = data;
+        filterCourses();
+      });
+
+    function setCategory(cat, element) {
+      document.querySelectorAll('.pill-btn').forEach(btn => btn.classList.remove('active'));
+      element.classList.add('active');
+      activeCat = cat;
+      document.getElementById('displayCategory').innerText = cat === 'ALL' ? 'Tất cả khoá học' : `Khoá học ${cat}`;
+      filterCourses();
     }
-    container.innerHTML = list.map(item => `
-      <div class="item">
-        <div>
-          <strong>${item.title}</strong>
-          <div style="font-size: 12px; color: #64748b;">${item.category}</div>
-        </div>
-        <button class="btn-download" onclick="showDownloadModal('${item.id}')">Tải về</button>
-      </div>
-    `).join('');
-  }
 
-  function showDownloadModal(id) {
-    currentDoc = docData.find(d => d.id === id);
-    document.getElementById('modalDocTitle').innerText = currentDoc.title;
-    document.getElementById('downloadModal').style.display = 'flex';
-  }
+    function filterCourses() {
+      const q = document.getElementById('searchInput').value.toLowerCase().trim();
+      const filtered = courses.filter(c => {
+        const matchCat = (activeCat === 'ALL') || 
+                         (c.category && c.category.toLowerCase().includes(activeCat.toLowerCase())) ||
+                         (c.subject && c.subject.toLowerCase().includes(activeCat.toLowerCase()));
+        const matchKeyword = c.title.toLowerCase().includes(q) || 
+                             (c.id && c.id.toLowerCase().includes(q));
+        return matchCat && matchKeyword;
+      });
+      render(filtered);
+    }
 
-  function handleDownload() {
-    if (!currentDoc) return;
-    
-    // 1. Mở tab mới dẫn sang link Shopee (lưu cookie affiliate)
-    window.open(currentDoc.shopee_link, '_blank');
-    
-    // 2. Chuyển hướng tab hiện tại thẳng sang Google Drive (tránh bị trình duyệt chặn pop-up)
-    window.location.href = currentDoc.link;
-  }
-</script>
+    function render(list) {
+      const container = document.getElementById('courseList');
+      document.getElementById('courseCount').innerText = `${list.length} khoá học`;
 
+      if (!list.length) {
+        container.innerHTML = '<p style="grid-column:1/-1; text-align:center; color:#94a3b8; padding: 40px 0;">Không tìm thấy khoá học phù hợp.</p>';
+        return;
+      }
+
+      container.innerHTML = list.map(c => {
+        const cat = c.category || c.subject || 'Khoá học';
+        const img = c.image && c.image.trim() !== '' ? c.image : 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600';
+        return `
+          <div class="course-card">
+            <div class="thumb-wrap">
+              <span class="category-badge">${cat}</span>
+              <img class="course-thumb" src="${img}" alt="${c.title}" loading="lazy">
+            </div>
+            <div class="course-content">
+              <div>
+                <div class="course-title" title="${c.title}">${c.title}</div>
+                <div class="course-meta">
+                  <span>📖 Tự học online</span>
+                  <span class="price-free">Miễn phí</span>
+                </div>
+              </div>
+              <button class="btn-study" onclick="openCourseModal('${c.id}')">Vào học ngay</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function openCourseModal(id) {
+      currentCourse = courses.find(c => c.id === id);
+      const defaultImg = 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600';
+      document.getElementById('mImg').src = currentCourse.image || defaultImg;
+      document.getElementById('mTitle').innerText = currentCourse.title;
+      document.getElementById('courseModal').style.display = 'flex';
+    }
+
+    function handleAccessCourse() {
+      if (!currentCourse) return;
+      window.open(currentCourse.shopee_link, '_blank');
+      window.location.href = currentCourse.link;
+    }
+  </script>
 </body>
 </html>
